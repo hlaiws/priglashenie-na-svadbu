@@ -11,21 +11,16 @@
       padding: 0;
       background: black;
       width: 100%;
+      overflow-y: auto; /* Скролл, если картинка выше окна */
     }
 
-    /* Сбрасываем ограничение на высоту, чтобы появился скролл */
-    body {
-      overflow-y: auto;
-    }
-
-    /* Картинки */
+    /* Общие стили для картинок */
     img {
-      display: none;
-      width: 100%;       /* растягиваем по ширине */
-      height: auto;      /* сохраняем пропорции */
-      max-width: 100%;   /* не вылезает за экран */
+      width: 100%;      /* растягиваем по ширине */
+      height: auto;     /* сохраняем пропорции */
+      max-width: 100%;
+      display: none;    /* скрываем по умолчанию */
       object-fit: cover; /* красиво обрезает, если нужно */
-      display: block;
     }
 
     /* Компьютерная версия */
@@ -45,8 +40,9 @@
 </head>
 <body>
 
-  <img src="desktop.png" class="desktop" alt="">
-  <img src="mobile.png" class="mobile" alt="">
+  <!-- Только одна версия показывается одновременно -->
+  <img src="desktop.png" class="desktop" alt="Desktop version">
+  <img src="mobile.png" class="mobile" alt="Mobile version">
 
 </body>
 </html>
